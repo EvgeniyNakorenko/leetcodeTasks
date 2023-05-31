@@ -1,7 +1,14 @@
+//Учитывая строку s, содержащую только символы
+//'(', ')', '{', и , определите '}', допустима
+//ли входная строка. '[' ']'
+//Входная строка действительна, если:
+//Открытые скобки должны быть закрыты однотипными скобками.
+//Открытые скобки должны быть закрыты в правильном порядке.
+//Каждой закрывающей скобке соответствует открытая скобка того же типа.
 class Solution {
     fun isValid(s: String): Boolean {
-        var st:String=s
-        while  (st.contains("()")||st.contains("{}")||st.contains("[]")) {
+        var st: String = s
+        while (st.contains("()") || st.contains("{}") || st.contains("[]")) {
             val x = st.find { it == '(' }
             val y = st.find { it == ')' }
             if (x != null && y != null) {
@@ -29,8 +36,8 @@ class Solution {
     }
 }
 
-fun main(){
-    val s="(){}()()"
+fun main() {
+    val s = "(){}()()"
     println()
     println(Solution().isValid(s))
 }
